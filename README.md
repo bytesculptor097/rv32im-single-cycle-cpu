@@ -99,6 +99,29 @@ sudo make install
  make -j$(nproc)
  sudo make install
 ```
+### Building the the binaries
+
+Go to the `src` folder (Remember to clone this repository) and type:-
+```
+make build
+```
+*This will generate the binary file like top.bin, top.asc etc.*
+### Flashing to the FPGA
+Then right after building binaries, type:-
+```
+sudo make flash
+```
+*This will flash the binary files to the FPGA*
+
+### Observing the output
+
+After flashing type:-
+```
+sudo make terminal
+```
+
+
+
 
 
 ## License
