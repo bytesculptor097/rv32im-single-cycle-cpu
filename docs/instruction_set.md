@@ -11,7 +11,6 @@ This CPU core implements the full RV32I base instruction set and the RV32M exten
 - `SUB`   – Subtract
 - `ADDI`  – Add Immediate
 - `LUI`   – Load Upper Immediate
-- `AUIPC` – Add Upper Immediate to PC
 
 ### Logical Instructions
 - `AND`   – Bitwise AND
@@ -31,19 +30,12 @@ This CPU core implements the full RV32I base instruction set and the RV32M exten
 
 ### Comparison Instructions
 - `SLT`   – Set Less Than
-- `SLTU`  – Set Less Than Unsigned
-- `SLTI`  – Set Less Than Immediate
-- `SLTIU` – Set Less Than Immediate Unsigned
 
 ### Control Transfer Instructions
 - `JAL`   – Jump and Link
 - `JALR`  – Jump and Link Register
 - `BEQ`   – Branch if Equal
 - `BNE`   – Branch if Not Equal
-- `BLT`   – Branch if Less Than
-- `BGE`   – Branch if Greater or Equal
-- `BLTU`  – Branch if Less Than Unsigned
-- `BGEU`  – Branch if Greater or Equal Unsigned
 
 ### Memory Instructions
 - `LH`    – Load Halfword
