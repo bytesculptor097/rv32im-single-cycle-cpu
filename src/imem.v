@@ -15,9 +15,8 @@ module ram (
 
 
     initial begin
-      mem[0] = 32'h026281b3; // mul x3, x5, x6
-      mem[1] = 32'h0262c233; // div x4, x5, x6
-      mem[2] = 32'h0262e3b3; // rem x7, x5, x6
+      $readmemh("imem.mem", mem);
     end
 
 endmodule
+
