@@ -63,7 +63,7 @@ See [`docs/instruction_set.md`](docs/instruction_set.md) for a full list.
 
 ## Block Diagram
 
-![Architecture](docs/architecture.png)
+![Architecture](https://github.com/bytesculptor097/rv32im_fpga/blob/fe1797fa49c4503df83541f1ca342118e63c2950/docs/architecture.png)
 
 # VSDSquadronFM implementation
 The VSDSquadron FPGA Mini (FM) is a compact and low-cost development board designed for FPGA prototyping and embedded system projects. This board provides a seamless hardware development experience with an integrated programmer, versatile GPIO access, and onboard memory, making it ideal for students, hobbyists, and developers exploring FPGA-based designs. [source](https://www.vlsisystemdesign.com/vsdsquadronfm/)
