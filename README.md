@@ -31,7 +31,6 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 │   |── top.v             # CPU top module
 |   └── ...
 ├── docs/                 # Documentation and architecture diagrams
-│   ├── architecture.png  # Block diagram of the CPU
 │   └── instruction_set.md# Supported instructions
 ├── README.md             # This file
 └── LICENSE               # License information
@@ -67,9 +66,7 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 
 See [`docs/instruction_set.md`](docs/instruction_set.md) for a full list.
 
-## Block Diagram
 
-![Architecture](https://github.com/bytesculptor097/rv32im_fpga/blob/fe1797fa49c4503df83541f1ca342118e63c2950/docs/architecture.png)
 
 ## License
 
