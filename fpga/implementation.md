@@ -66,12 +66,14 @@ sudo make terminal
 | result[0]     | 42  |
 | result[1]     | 43  |
 | result[2]     | 44  | 
-| result[3]     | 45  |         <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/40fe6093-6988-40f2-a69d-a65180099856" />
+| result[3]     | 45  |         
 | result[4]     | 46  |
 | result[5]     | 47  |
 | result[6]     | 48  |
 | result[7]     | 2   |
 | uarttx        | 14  |
+
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/40fe6093-6988-40f2-a69d-a65180099856" />
 
 
 
