@@ -55,6 +55,7 @@ sudo make terminal
 **OR** go to an application based serial monitor like [PuTTY](https://www.putty.org/).
 
 <img width="400" height="286" alt="Screenshot 2025-08-03 183237" src="https://github.com/user-attachments/assets/1dbd42a5-e072-476c-a7fc-8f9cb3a4bf24" />
+
 *This output because the current loaded instruction is for verifying the M extension of the CPU by calculating MUL, DIV and REM* 
 
 
