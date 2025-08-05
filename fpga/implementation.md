@@ -58,7 +58,7 @@ sudo make terminal
 
 *This output because the current loaded instruction is for verifying the M extension of the CPU by calculating MUL, DIV and REM* 
 
-## Connections for observing output in hardware
+## Observing output in hardware
 
 | Signal        | Pin |
 |---------------|-----|
@@ -66,7 +66,7 @@ sudo make terminal
 | result[0]     | 42  |
 | result[1]     | 43  |
 | result[2]     | 44  |
-| result[3]     | 45  |
+| result[3]     | 45  |                               
 | result[4]     | 46  |
 | result[5]     | 47  |
 | result[6]     | 48  |
