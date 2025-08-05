@@ -24,6 +24,11 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 ├── testbench/            # Testbench and simulation files
 │   ├── cpu_tb.v          # CPU testbench
 │   └── ...               
+├── fpga/                 # FPGA-specific files and configurations
+│   ├── VSDSquadronFM.pcf # Pin constraints for FPGA board
+│   ├── Makefile.mk       # Synthesis and implementation script
+│   |── top.v             # CPU top module
+|   └── ...
 ├── docs/                 # Documentation and architecture diagrams
 │   ├── architecture.png  # Block diagram of the CPU
 │   └── instruction_set.md# Supported instructions
