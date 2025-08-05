@@ -83,6 +83,16 @@ Connect the VSDSquadronFM pins as:-
 | uarttx     | VSDFPGA           | 14          | —                   | —       | —        |
 
 
+
+
+
+
+
+
+
+
+
+
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/40fe6093-6988-40f2-a69d-a65180099856" />
 
 *15 × 4 = 60 = 00111100* 
