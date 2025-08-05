@@ -1,0 +1,11 @@
+set_io rst 3
+set_io result[0] 42
+set_io result[1] 43
+set_io result[2] 44
+set_io result[3] 45
+set_io result[4] 46
+set_io result[5] 47
+set_io result[6] 48
+set_io result[7] 2
+set_io uarttx 14
+ 
