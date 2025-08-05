@@ -60,10 +60,18 @@ sudo make terminal
 
 ## Connections for observing output in hardware
 
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
-| Row 1    | Data     | More     |
-| Row 2    | Data     | More     |
+| Signal        | Pin |
+|---------------|-----|
+| rst           | 3   |
+| result[0]     | 42  |
+| result[1]     | 43  |
+| result[2]     | 44  |
+| result[3]     | 45  |
+| result[4]     | 46  |
+| result[5]     | 47  |
+| result[6]     | 48  |
+| result[7]     | 2   |
+| uarttx        | 14  |
 
 
 
