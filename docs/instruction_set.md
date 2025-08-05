@@ -23,10 +23,8 @@ This CPU core implements the full RV32I base instruction set and the RV32M exten
 ### Shift Instructions
 - `SLL`   – Shift Left Logical
 - `SRL`   – Shift Right Logical
-- `SRA`   – Shift Right Arithmetic
 - `SLLI`  – Shift Left Logical Immediate
 - `SRLI`  – Shift Right Logical Immediate
-- `SRAI`  – Shift Right Arithmetic Immediate
 
 ### Comparison Instructions
 - `SLT`   – Set Less Than
