@@ -60,6 +60,8 @@ sudo make terminal
 
 ## Observing output in hardware
 
+Connect the VSDSquafronFM pins as:-
+
 | Signal        | Pin |
 |---------------|-----|
 | rst           | 3   |
