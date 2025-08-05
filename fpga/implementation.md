@@ -34,7 +34,7 @@ sudo make install
 ```
 ### Building the the binaries
 
-Go to the `src` folder (Remember to clone this repository) and type in the terminal:-
+Go to the `fpga` folder (Remember to clone this repository) and type in the terminal:-
 ```
 make build
 ```
