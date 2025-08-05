@@ -51,9 +51,6 @@ This CPU core implements the full RV32I base instruction set and the RV32M exten
 ## RV32M Extension (Multiplication/Division)
 
 - `MUL`    – Multiply
-- `MULH`   – Multiply High (signed × signed)
-- `MULHSU` – Multiply High (signed × unsigned)
-- `MULHU`  – Multiply High (unsigned × unsigned)
 - `DIV`    – Divide (signed)
 - `DIVU`   – Divide (unsigned)
 - `REM`    – Remainder (signed)
