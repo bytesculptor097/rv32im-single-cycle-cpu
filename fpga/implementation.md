@@ -60,7 +60,7 @@ sudo make terminal
 
 ## Observing output in hardware
 
-Connect the VSDSquafronFM pins as:-
+Connect the VSDSquadronFM pins as:-
 
 | Signal        | Pin |
 |---------------|-----|
