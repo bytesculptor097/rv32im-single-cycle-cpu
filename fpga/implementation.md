@@ -55,9 +55,9 @@ sudo make terminal
 ### OR use an application serial monitor (PuTTY)
 1. Go to device  manager (in windows) and click on COM & LPT and observe the COM port for the  FTDI chip.
 2. Type the COM number (in my case it is 4)
-
 <img width="453" height="422" alt="image" src="https://github.com/user-attachments/assets/d8154722-5c83-4f3f-890c-9194c23e3b97" />
-3. Click on open 
+3. **Type the baud rate 115200**
+4. Click on open 
 <img width="400" height="286" alt="Screenshot 2025-08-03 183237" src="https://github.com/user-attachments/assets/1dbd42a5-e072-476c-a7fc-8f9cb3a4bf24" />
 
 *This output because the current loaded instruction is for verifying the M extension of the CPU by calculating MUL, DIV and REM* 
