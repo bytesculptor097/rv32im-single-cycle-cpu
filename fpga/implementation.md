@@ -58,5 +58,14 @@ sudo make terminal
 
 *This output because the current loaded instruction is for verifying the M extension of the CPU by calculating MUL, DIV and REM* 
 
+## Connections for observing output in hardware
+
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Row 1    | Data     | More     |
+| Row 2    | Data     | More     |
+
+
+
 
 
