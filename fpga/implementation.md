@@ -67,18 +67,20 @@ sudo make terminal
 
 Connect the VSDSquadronFM pins as:-
 
-| Signal      | Pin | LED   |
-|-------------|-----|-------|
-| rst         | 3   |       |
-| result[0]   | 42  | LED0  |
-| result[1]   | 43  | LED1  |
-| result[2]   | 44  | LED2  |
-| result[3]   | 45  | LED3  |
-| result[4]   | 46  | LED4  |
-| result[5]   | 47  | LED5  |
-| result[6]   | 48  | LED6  |
-| result[7]   | 2   | LED7  |
-| uarttx      | 14  |       |
+### 🔧 Signal Mapping Table
+
+| Signal     | Source Object | Source Pin | Destination Object | LED     | Polarity |
+|------------|----------------|-------------|---------------------|---------|----------|
+| rst        | FPGA           | 3           | —                   | —       | —        |
+| result[0]  | FPGA           | 42          | LED                 | LED0    | Anode    |
+| result[1]  | FPGA           | 43          | LED                 | LED1    | Anode    |
+| result[2]  | FPGA           | 44          | LED                 | LED2    | Anode    |
+| result[3]  | FPGA           | 45          | LED                 | LED3    | Anode    |
+| result[4]  | FPGA           | 46          | LED                 | LED4    | Anode    |
+| result[5]  | FPGA           | 47          | LED                 | LED5    | Anode    |
+| result[6]  | FPGA           | 48          | LED                 | LED6    | Anode    |
+| result[7]  | FPGA           | 2           | LED                 | LED7    | Anode    |
+| uarttx     | FPGA           | 14          | —                   | —       | —        |
 
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/40fe6093-6988-40f2-a69d-a65180099856" />
 
