@@ -2,7 +2,7 @@
 The VSDSquadron FPGA Mini (FM) is a compact and low-cost development board designed for FPGA prototyping and embedded system projects. This board provides a seamless hardware development experience with an integrated programmer, versatile GPIO access, and onboard memory, making it ideal for students, hobbyists, and developers exploring FPGA-based designs. [source](https://www.vlsisystemdesign.com/vsdsquadronfm/)
 ## Prerequisites
 
-- Linux background or virtual box OSs (like Ubuntu)
+- Linux background or [virtual box](https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html) OSs (like Ubuntu)
 - VSDSquadronFM
 
 ## Downloading the necessary building tools
