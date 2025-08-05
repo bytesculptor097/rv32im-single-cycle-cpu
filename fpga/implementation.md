@@ -71,16 +71,17 @@ Connect the VSDSquadronFM pins as:-
 
 | Signal     | Source Object | Source Pin | Destination Object | LED     | Polarity |
 |------------|----------------|-------------|---------------------|---------|----------|
-| rst        | FPGA           | 3           | —                   | —       | —        |
-| result[0]  | FPGA           | 42          | LED                 | LED0    | Anode    |
-| result[1]  | FPGA           | 43          | LED                 | LED1    | Anode    |
-| result[2]  | FPGA           | 44          | LED                 | LED2    | Anode    |
-| result[3]  | FPGA           | 45          | LED                 | LED3    | Anode    |
-| result[4]  | FPGA           | 46          | LED                 | LED4    | Anode    |
-| result[5]  | FPGA           | 47          | LED                 | LED5    | Anode    |
-| result[6]  | FPGA           | 48          | LED                 | LED6    | Anode    |
-| result[7]  | FPGA           | 2           | LED                 | LED7    | Anode    |
-| uarttx     | FPGA           | 14          | —                   | —       | —        |
+| rst        |  VSDFPGA           | 3           | —                   | —       | —        |
+| result[0]  | VSDFPGA           | 42          | LED                 | LED0    | Anode    |
+| result[1]  | VSDFPGA           | 43          | LED                 | LED1    | Anode    |
+| result[2]  | VSDFPGA           | 44          | LED                 | LED2    | Anode    |
+| result[3]  | VSDFPGA           | 45          | LED                 | LED3    | Anode    |
+| result[4]  | VSDFPGA           | 46          | LED                 | LED4    | Anode    |
+| result[5]  | VSDFPGA           | 47          | LED                 | LED5    | Anode    |
+| result[6]  | VSDFPGA           | 48          | LED                 | LED6    | Anode    |
+| result[7]  | VSDFPGA           | 2           | LED                 | LED7    | Anode    |
+| uarttx     | VSDFPGA           | 14          | —                   | —       | —        |
+
 
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/40fe6093-6988-40f2-a69d-a65180099856" />
 
