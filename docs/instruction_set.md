@@ -49,14 +49,7 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `LW`     – Load Word
 - `SW`     – Store Word
 
-### System Instructions
 
-- `CSRRW`  – Atomic Read/Write CSR
-- `CSRRS`  – Atomic Read and Set CSR bits
-- `CSRRC`  – Atomic Read and Clear CSR bits
-- `CSRRWI` – Atomic Read/Write CSR Immediate
-- `CSRRSI` – Atomic Read and Set CSR Immediate
-- `CSRRCI` – Atomic Read and Clear CSR Immediate
 
 ---
 
