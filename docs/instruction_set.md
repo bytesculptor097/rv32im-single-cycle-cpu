@@ -12,7 +12,6 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `SUB`    – Subtract
 - `ADDI`   – Add Immediate
 - `LUI`    – Load Upper Immediate
-- `AUIPC`  – Add Upper Immediate to PC
 
 ### Logical Instructions
 - `AND`    – Bitwise AND
