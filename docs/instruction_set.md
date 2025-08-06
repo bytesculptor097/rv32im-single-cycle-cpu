@@ -73,7 +73,7 @@ This file should contain the machine code (hexadecimal format) for your program,
 
 1. **Create your RISC-V program** in assembly or C, and compile it using a RISC-V toolchain to obtain the binary/hex instructions.
 2. **Convert the binary to hexadecimal** in the format expected by the simulator (one instruction per line, little-endian order if required).
-3. **Place your hex instructions in `imem.mem`** within your project directory (usually under `/src` or `/sim`).
+3. **Place your hex instructions in `imem.mem`** within your project directory (`/src`)
 
 **Example `imem.mem` file:**
 ```
