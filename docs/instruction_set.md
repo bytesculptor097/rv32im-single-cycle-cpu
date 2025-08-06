@@ -1,48 +1,63 @@
 # Supported Instructions for RV32IM Single-Cycle CPU
 
-This CPU core implements the full RV32I base instruction set and the RV32M extension for integer multiplication and division as defined by the RISC-V specification.
+This CPU core implements the full RV32I base instruction set and the RV32M extension for integer multiplication and division as defined by the RISC-V specification.  
+Additional comparison, control transfer, memory, system, and pseudo-instructions are also listed for completeness.
 
 ---
 
 ## RV32I Base Instructions
 
 ### Arithmetic Instructions
-- `ADD`   – Add
-- `SUB`   – Subtract
-- `ADDI`  – Add Immediate
-- `LUI`   – Load Upper Immediate
+- `ADD`    – Add
+- `SUB`    – Subtract
+- `ADDI`   – Add Immediate
+- `LUI`    – Load Upper Immediate
+- `AUIPC`  – Add Upper Immediate to PC
 
 ### Logical Instructions
-- `AND`   – Bitwise AND
-- `OR`    – Bitwise OR
-- `XOR`   – Bitwise XOR
-- `ANDI`  – Bitwise AND Immediate
-- `ORI`   – Bitwise OR Immediate
-- `XORI`  – Bitwise XOR Immediate
+- `AND`    – Bitwise AND
+- `OR`     – Bitwise OR
+- `XOR`    – Bitwise XOR
+- `ANDI`   – Bitwise AND Immediate
+- `ORI`    – Bitwise OR Immediate
+- `XORI`   – Bitwise XOR Immediate
 
 ### Shift Instructions
-- `SLL`   – Shift Left Logical
-- `SRL`   – Shift Right Logical
-- `SLLI`  – Shift Left Logical Immediate
-- `SRLI`  – Shift Right Logical Immediate
+- `SLL`    – Shift Left Logical
+- `SRL`    – Shift Right Logical
+- `SRA`    – Shift Right Arithmetic
+- `SLLI`   – Shift Left Logical Immediate
+- `SRLI`   – Shift Right Logical Immediate
+- `SRAI`   – Shift Right Arithmetic Immediate
 
 ### Comparison Instructions
-- `SLT`   – Set Less Than
+- `SLT`    – Set Less Than (signed)
+- `SLTU`   – Set Less Than Unsigned
+- `SLTI`   – Set Less Than Immediate (signed)
+- `SLTIU`  – Set Less Than Immediate Unsigned
 
 ### Control Transfer Instructions
-- `JAL`   – Jump and Link
-- `JALR`  – Jump and Link Register
-- `BEQ`   – Branch if Equal
-- `BNE`   – Branch if Not Equal
+- `JAL`    – Jump and Link
+- `JALR`   – Jump and Link Register
+- `BEQ`    – Branch if Equal
+- `BNE`    – Branch if Not Equal
+- `BLT`    – Branch if Less Than
+- `BGE`    – Branch if Greater or Equal
+- `BLTU`   – Branch if Less Than Unsigned
+- `BGEU`   – Branch if Greater or Equal Unsigned
 
 ### Memory Instructions
-- `LH`    – Load Halfword
-- `LW`    – Load Word
-- `SH`    – Store Halfword
-- `SW`    – Store Word
+- `LW`     – Load Word
+- `SW`     – Store Word
 
 ### System Instructions
-- `CSRR` – the system CSR register
+
+- `CSRRW`  – Atomic Read/Write CSR
+- `CSRRS`  – Atomic Read and Set CSR bits
+- `CSRRC`  – Atomic Read and Clear CSR bits
+- `CSRRWI` – Atomic Read/Write CSR Immediate
+- `CSRRSI` – Atomic Read and Set CSR Immediate
+- `CSRRCI` – Atomic Read and Clear CSR Immediate
 
 ---
 
@@ -53,6 +68,7 @@ This CPU core implements the full RV32I base instruction set and the RV32M exten
 - `DIVU`   – Divide (unsigned)
 - `REM`    – Remainder (signed)
 - `REMU`   – Remainder (unsigned)
+
 
 ---
 
