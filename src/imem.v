@@ -13,10 +13,8 @@ module ram (
         dout <= mem[addr[11:2]];
     end
 
-
     initial begin
-      $readmemh("imem.mem", mem);
+      mem[0] = 32'h00037193;
     end
 
 endmodule
-

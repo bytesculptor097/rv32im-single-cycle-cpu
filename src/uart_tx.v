@@ -1,5 +1,5 @@
 module uart_tx #(
-    parameter CLK_FREQ   = 48_000_000,   // 48 MHz
+    parameter CLK_FREQ   = 50_000_000,   // 50 MHz
     parameter BAUD_RATE  = 115_200       // 115.2 kbaud
 ) (
     input  wire       clk,

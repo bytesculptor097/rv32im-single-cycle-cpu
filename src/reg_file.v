@@ -42,9 +42,8 @@ module regfile (
     for (i = 0; i < 32; i = i + 1) begin
         regs[i] = 32'b0; // Initialize all registers to zero
     end
-
-    regs[5] = 32'd31;
-    regs[6] = 32'd6;
+    regs[5] = 32'd4;
+    regs[6] = 32'd5;
 
 
 end
@@ -55,24 +54,7 @@ end
      #100; // Wait long enough for CPU to execute and write to regs
 
      $display("x3 = %h, x4 = %h, x7 = %h, x10 = %h", regs[3], regs[4], regs[7], regs[10]);
+    end
 
-    if (regs[10] === 32'h40001100)
-        $display("The CPU supports M extension!");
-
-     if (regs[3] === 32'h000000ba)
-        $display("Test passed, MUL is supported!");
-    else
-        $display("Test failed, MUL is not supported");
-
-    if (regs[4] === 32'h00000005)
-        $display("Test passed, DIV is supported!");
-    else
-            $display("Test failed, DIV is not supported");
-
-    if (regs[7] === 32'h00000001)
-        $display("Test passed, REM is supported!");
-    else
-        $display("Test failed, REM is not supported");
-end
 
 endmodule

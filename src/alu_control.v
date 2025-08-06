@@ -30,6 +30,8 @@ always @(*) begin
                 3'b101: begin
                     if (funct7 == 7'b0000001)
                         ALUControl = 4'b1100; // DIVU
+                    else if (funct7 == 7'b0100000)
+                        ALUControl = 4'b0101; // SRA
                     else
                         ALUControl = 4'b1001; // SRL
                 end
@@ -47,6 +49,7 @@ always @(*) begin
                 end
                 3'b010: ALUControl = 4'b0111; // SLT
                 3'b001: ALUControl = 4'b1000; // SLL
+                3'b011: ALUControl = 4'b0100; // SLTU
                 default: ALUControl = 4'b1111; // Invalid
             endcase
         end
@@ -55,6 +58,8 @@ always @(*) begin
 
         default: ALUControl = 4'b1111; // Unknown
     endcase
+
+    
 
     
 end

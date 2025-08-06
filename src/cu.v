@@ -9,7 +9,6 @@ module control_unit(
     output reg Jump,
     output reg Jump_r,
     output reg memtoreg,
-    output reg AUIPC,
     output reg [1:0] ALUOp,
     output reg csr_read_en,    
     output reg csr_write_en,   
@@ -27,7 +26,6 @@ module control_unit(
     Jump     = 0;
     Jump_r   = 0;
     ALUOp    = 2'b00;
-    AUIPC    = 0;
     memtoreg = 0;
     csr_read_en  = 0;
     csr_write_en = 0;
@@ -95,7 +93,6 @@ module control_unit(
 
         7'b0010111: begin // U-type (auipc) 
             RegWrite = 1;
-            AUIPC    = 1;
             ALUSrc   = 1;
             ALUOp    = 2'b00; // Use ALU to add PC + imm
         end
