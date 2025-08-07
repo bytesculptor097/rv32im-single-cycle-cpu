@@ -11,7 +11,6 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `ADD`    – Add
 - `SUB`    – Subtract
 - `ADDI`   – Add Immediate
-- `LUI`    – Load Upper Immediate
 
 ### Logical Instructions
 - `AND`    – Bitwise AND
