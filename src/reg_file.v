@@ -11,7 +11,8 @@ module regfile (
     output wire [31:0] x5_debug,
     output wire [31:0] x10_debug,
     output wire [31:0] x7_debug,
-    output wire [31:0] x4_debug
+    output wire [31:0] x4_debug,
+    output wire [31:0] x2_debug
 );
 
     reg [31:0] regs [0:31];
@@ -30,6 +31,7 @@ module regfile (
     end
 
     // Debug outputs
+    assign x2_debug = regs[2];
     assign x3_debug = regs[3];
     assign x5_debug = regs[5];
     assign x10_debug = regs[10];
@@ -42,8 +44,9 @@ module regfile (
     for (i = 0; i < 32; i = i + 1) begin
         regs[i] = 32'b0; // Initialize all registers to zero
     end
-    regs[5] = 32'd4;
-    regs[6] = 32'd5;
+    regs[0] = 32'd0;
+    regs[3] = 32'd99;
+    regs[4] = 32'd5;
 
 
 end
@@ -53,7 +56,7 @@ end
     initial begin
      #100; // Wait long enough for CPU to execute and write to regs
 
-     $display("x3 = %h, x4 = %h, x7 = %h, x10 = %h", regs[3], regs[4], regs[7], regs[10]);
+     $display("x2 = %d, x3 = %d, x4 = %d, x7 = %d, x10 = %d",regs[2], regs[3], regs[4], regs[7], regs[10]);
     end
 
 

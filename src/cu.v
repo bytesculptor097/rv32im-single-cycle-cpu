@@ -12,8 +12,8 @@ module control_unit(
     output reg [1:0] ALUOp,
     output reg csr_read_en,    
     output reg csr_write_en,   
-    output reg is_csr           
-
+    output reg is_csr,
+    output reg [2:0] branch_type  
 );
 
  always @(*) begin
@@ -30,99 +30,80 @@ module control_unit(
     csr_read_en  = 0;
     csr_write_en = 0;
     is_csr = 0;
+    branch_type = 3'b000; // Default to BEQ
 
     case (opcode)
-        7'b0110011: begin // R-type (e.g., add, sub)
+        7'b0110011: begin // R-type
             RegWrite = 1;
             ALUSrc   = 0;
             ALUOp    = 2'b10;
-            memtoreg = 0; // Write ALU result to register
+            memtoreg = 0;
         end
 
         7'b0010011: begin // I-type (e.g., addi)
             RegWrite = 1;
             ALUSrc   = 1;
             ALUOp    = 2'b00;
-            MemRead  = 0;
-            MemWrite = 0;
-            memtoreg = 0; // Write ALU result to register
         end
 
-        7'b0000011: begin // I-type (e.g., lw)
+        7'b0000011: begin // Load
             RegWrite = 1;
             ALUSrc   = 1;
             MemRead  = 1;
-            MemWrite = 0;
-            memtoreg = 1; // Read data from memory
+            memtoreg = 1;
             ALUOp    = 2'b00;
         end
 
-        7'b0100011: begin // S-type (e.g., sw)
-            RegWrite = 0;
+        7'b0100011: begin // Store
             ALUSrc   = 1;
             MemWrite = 1;
             ALUOp    = 2'b00;
         end
 
-        7'b1100011: begin // B-type (e.g., beq)
-            RegWrite = 0;
-            ALUSrc   = 0;
+        7'b1100011: begin // Branch
             Branch   = 1;
+            ALUSrc   = 0;
             ALUOp    = 2'b01;
+            case (funct3)
+                3'b000: branch_type = 3'b000; // BEQ
+                3'b001: branch_type = 3'b001; // BNE
+                3'b100: branch_type = 3'b010; // BLT
+                3'b101: branch_type = 3'b011; // BGE
+                default: branch_type = 3'b000;
+            endcase
         end
 
-        7'b0110111: begin // U-type (e.g., lui)
+        7'b0110111: begin // LUI
             RegWrite = 1;
             ALUSrc   = 1;
-            ALUOp    = 2'b11; // Custom code for LUI
+            ALUOp    = 2'b11;
         end
 
-        7'b1101111: begin // J-type (e.g., jal)
+        7'b1101111: begin // JAL
             RegWrite = 1;
-            Jump   = 1;
+            Jump     = 1;
             ALUSrc   = 1;
             ALUOp    = 2'b00;
         end
 
-        7'b1100111: begin // I-type (e.g., jalr)
+        7'b1100111: begin // JALR
             RegWrite = 1;
             Jump_r   = 1;
             ALUSrc   = 1;
             ALUOp    = 2'b00;
         end
 
-        7'b0010111: begin // U-type (auipc) 
+        7'b0010111: begin // AUIPC
             RegWrite = 1;
             ALUSrc   = 1;
-            ALUOp    = 2'b00; // Use ALU to add PC + imm
+            ALUOp    = 2'b00;
         end
 
         7'b1110011: begin // SYSTEM (CSR)
             is_csr = 1;
-            RegWrite = 1; // CSR instructions write to rd
-
+            RegWrite = 1;
             case (funct3)
-                3'b001: begin // CSRRW
-                    csr_read_en  = 1;
-                    csr_write_en = 1;
-                end
-                3'b010: begin // CSRRS
-                    csr_read_en  = 1;
-                    csr_write_en = 1; // only if rs1 ≠ x0 (handled elsewhere)
-                end
-                3'b011: begin // CSRRC
-                    csr_read_en  = 1;
-                    csr_write_en = 1; // only if rs1 ≠ x0
-                end
-                3'b101: begin // CSRRWI
-                    csr_read_en  = 1;
-                    csr_write_en = 1;
-                end
-                3'b110: begin // CSRRSI
-                    csr_read_en  = 1;
-                    csr_write_en = 1;
-                end
-                3'b111: begin // CSRRCI
+                3'b001, 3'b010, 3'b011, 3'b101, 3'b110, 3'b111: begin
                     csr_read_en  = 1;
                     csr_write_en = 1;
                 end
@@ -133,17 +114,10 @@ module control_unit(
             endcase
         end
 
-
         default: begin
-            
+            // No action
         end
-
-        
     endcase
-
-
-
  end
-
 
 endmodule

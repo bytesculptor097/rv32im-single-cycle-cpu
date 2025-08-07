@@ -52,10 +52,7 @@ module uart_tx #(
             end
         end
 
-        
-    if (tx_start)
-     $display("TX start: %c", tx_data);
- end
+    end
 
 
 endmodule

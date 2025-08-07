@@ -38,6 +38,7 @@ module core (
     wire [31:0] x10_debug;
     wire [31:0] x7_debug;
     wire [31:0] x4_debug;
+    wire [2:0] branch_type;
 
 
 
@@ -99,7 +100,8 @@ module core (
         .ALUOp(aluop),
         .csr_read_en(csr_read_en),
         .csr_write_en(csr_write_en),
-        .is_csr(is_csr)
+        .is_csr(is_csr),
+        .branch_type(branch_type)
     );
 
     // ALU Control
@@ -124,7 +126,8 @@ module core (
         .x5_debug(x5_debug),
         .x10_debug(x10_debug),
         .x7_debug(x7_debug),
-        .x4_debug(x4_debug) 
+        .x4_debug(x4_debug),
+        .x2_debug(x2_debug) 
     );
 
     // ALU
@@ -157,17 +160,23 @@ module core (
 
 
 
-    // PC increment logic
-    always @(*) begin
-     if (jump_r)
-        next_addr = rs1value + imm;
-     else if (jump)
-        next_addr = curr_addr + imm;
-     else if (branch && zero)
-        next_addr = curr_addr + imm;
-     else
-        next_addr = curr_addr + 4;
-    end
+  // PC increment logic
+  always @(*) begin
+    if (jump_r)
+        next_addr = (rs1value + imm) & ~32'h1;  // JALR, aligned
+    else if (jump)
+        next_addr = curr_addr + imm;            // JAL
+    else if (branch) begin
+        case (branch_type)
+            3'b000: next_addr = zero  ? curr_addr + imm : curr_addr + 4; // BEQ
+            3'b001: next_addr = !zero ? curr_addr + imm : curr_addr + 4; // BNE
+            3'b010: next_addr = (rs1value < rs2value) ? curr_addr + imm : curr_addr + 4; // BLT
+            3'b011: next_addr = (rs1value >= rs2value) ? curr_addr + imm : curr_addr + 4; // BGE
+            default: next_addr = curr_addr + 4;                          // fallback
+        endcase
+    end else
+        next_addr = curr_addr + 4;  // default sequential execution
+  end
 
     assign result = x5_debug[7:0]; // Output the lower 8 bits of x5 for result
 
