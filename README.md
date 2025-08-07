@@ -55,7 +55,7 @@ This repository contains the design and implementation of a single-cycle RV32IM 
    - Using Icarus Verilog:
      ```sh
      iverilog -o cpu.vvp src/*.v
-     vvp cpu_tb
+     vvp cpu.vvp
      ```
    - Review the waveform using [GTKWave](http://gtkwave.sourceforge.net/) if desired.
 
