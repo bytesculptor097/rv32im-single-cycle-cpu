@@ -41,8 +41,7 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `BNE`    – Branch if Not Equal
 - `BLT`    – Branch if Less Than
 - `BGE`    – Branch if Greater or Equal
-- `BLTU`   – Branch if Less Than Unsigned
-- `BGEU`   – Branch if Greater or Equal Unsigned
+
 
 ### Memory Instructions
 - `LW`     – Load Word
