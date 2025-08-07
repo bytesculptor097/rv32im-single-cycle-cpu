@@ -14,9 +14,8 @@ module ram (
     end
 
     initial begin
-      mem[0] = 32'h0041d463;
-      mem[1] = 32'h00100113;  
-      mem[2] = 32'h02100393;  
+        $readmemh("imem.mem", mem);  
  end
 
 endmodule
+
