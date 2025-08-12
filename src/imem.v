@@ -14,8 +14,9 @@ module ram (
     end
 
     initial begin
-        $readmemh("imem.mem", mem);  
+        $readmemh("instr.hex", mem);  
  end
 
 endmodule
+
 
