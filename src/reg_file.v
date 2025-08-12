@@ -46,10 +46,9 @@ module regfile (
         for (i = 0; i < 32; i = i + 1) begin
             regs[i] = 32'b0; // Initialize all registers to zero
         end
-        regs[5] = 32'd31;
-        regs[6] = 32'd6;
     end
 
 endmodule
+
 
 
