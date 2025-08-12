@@ -69,7 +69,7 @@ See [`instruction_types.md`](docs/instruction_types.md) for a full list.
 
 ## Load instructions
 
-See [`instruction_load.md`](docs/32-instruction_load.md) for the instruction to load the 32-bit binary data into the core. 
+See [`instruction_load.md`](docs/instruction_load.md) for the instruction to load the 32-bit binary data into the core. 
 
 
 
