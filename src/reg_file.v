@@ -26,11 +26,13 @@ module regfile (
         if (reg_write && rd != 5'd0) begin
             regs[rd] <= wd;
         end
-
-        // $display for selected registers (x2, x3, x5, x10)
-        $display("x2 = %d, x3 = %d, x5 = %d, x10 = %d", regs[2], regs[3], regs[5], regs[10]);
     end
 
+    initial begin
+        #100
+        $display("x2 = %d, x3 = %d, x5 = %d, x10 = %d", regs[2], regs[3], regs[5], regs[10]);
+    end
+    
     // Debug outputs
     assign x2_debug = regs[2];
     assign x3_debug = regs[3];
@@ -49,3 +51,4 @@ module regfile (
     end
 
 endmodule
+
