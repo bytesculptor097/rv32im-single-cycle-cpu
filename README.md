@@ -1,8 +1,21 @@
 # RV32IM Single-Cycle CPU
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Directory Structure](#directory-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Building & Simulating](#building--simulating)
+- [Supported Instructions](#supported-instructions)
+- [Load instructions](#load-instructions)
+- [License](#license)
+- [Author](#author)
+
 ## Overview
 
-This repository contains the design and implementation of a single-cycle RV32IM CPU core. The RV32IM architecture is based on the RISC-V specification, supporting both integer (I) and multiplication/division (M) instruction sets. This project aims to provide a clear, educational, and extensible CPU design suitable for learning, experimentation, and hardware development.
+This repository contains the design and implementation of a single-cycle RV32IM CPU core. The RV32IM architecture is based on the RISC-V specification, supporting both integer (I) and multiplication/d[...]
 
 ## Features
 
@@ -41,7 +54,7 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 
 ### Prerequisites
 
-- **Hardware Description Language (HDL) Toolchain:** Verilog/SystemVerilog simulator such as [Icarus Verilog](http://iverilog.icarus.com/), [ModelSim](https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/model.html), or [Vivado](https://www.xilinx.com/products/design-tools/vivado.html).
+- **Hardware Description Language (HDL) Toolchain:** Verilog/SystemVerilog simulator such as [Icarus Verilog](http://iverilog.icarus.com/), [ModelSim](https://www.intel.com/content/www/us/en/software/[...]
 - **RISC-V Documentation:** Familiarity with the [RISC-V ISA](https://riscv.org/technical/specifications/).
 
 ### Building & Simulating
