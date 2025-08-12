@@ -31,8 +31,8 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 │   |── top.v             # CPU top module
 |   └── ...
 ├── docs/                 # Documentation and architecture diagrams
-│   |──instruction_set.md # Supported instructions
-|   └──rv32-gnu-tool_installation .md # Installation of the RV32IM GNU toolchain
+│   |──instruction_types.md # Supported instructions
+|   └──instruction_load.md  # Installation of the RV32IM GNU toolchain
 ├── README.md             # This file
 └── LICENSE               # License information
 ```
