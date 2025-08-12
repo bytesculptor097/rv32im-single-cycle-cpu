@@ -1,23 +1,10 @@
 module core (
+    input wire clk,
     input wire rst,
     output wire [7:0] result,
     output wire uarttx
 );
 
-    wire [31:0] din;
-    wire high_clk;
-    SB_HFOSC #(.CLKHF_DIV ("0b00")) u_SB_HFOSC ( .CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(high_clk));
-    
-    reg [5:0] clk_div_counter = 0;
-    reg clk = 0;
-
-   always @(posedge high_clk) begin
-    clk_div_counter <= clk_div_counter + 1;
-    if (clk_div_counter == 17) begin
-        clk <= ~clk;
-        clk_div_counter <= 0;
-    end
-  end
 
 
     // Internal wires
@@ -270,3 +257,4 @@ module core (
  end
 
 endmodule
+
