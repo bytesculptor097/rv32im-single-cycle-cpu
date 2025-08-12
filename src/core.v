@@ -1,6 +1,6 @@
 module core (
     input wire clk,
-    input wire rst,
+    input wire rst
 );
 
 
@@ -183,5 +183,6 @@ module core (
  
 
 endmodule
+
 
 
