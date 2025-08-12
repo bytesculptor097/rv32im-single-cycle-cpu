@@ -32,13 +32,13 @@ sudo make install
  make -j$(nproc)
  sudo make install
 ```
-### Building the the binaries
+### Building the binaries and instruction files
 
 Go to the `fpga` folder (Remember to clone this repository) and type in the terminal:-
 ```
-make build
+make all
 ```
-*This will generate the binary file like top.bin, top.asc etc.*
+*This will generate the binary file like instr.hex, top.bin, top.asc etc.*
 ### Flashing to the FPGA
 Then right after building binaries, type:-
 ```
