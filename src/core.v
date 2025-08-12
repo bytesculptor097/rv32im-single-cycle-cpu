@@ -1,8 +1,6 @@
 module core (
     input wire clk,
     input wire rst,
-    output wire [7:0] result,
-    output wire uarttx
 );
 
 
@@ -174,8 +172,6 @@ module core (
         next_addr = curr_addr + 4;  // default sequential execution
   end
 
-    assign result = x5_debug[7:0]; // Output the lower 8 bits of x5 for result
-
     reg [2:0] init_cnt;
 
  always @(posedge clk) begin
@@ -185,76 +181,7 @@ module core (
     init_cnt <= init_cnt + 1;
  end
  
-    wire  uart_tx_busy;
-    wire      uart_txd;
- 
-  uart_tx #(
-  .CLK_FREQ(48_000_000),
-  .BAUD_RATE(115_200)
- ) uart_tx_inst (
-  .clk      (high_clk),
-  .rst_n    (~rst),           // invert your active-high rst
-  .tx_start (uart_tx_en),
-  .tx_data  (uart_tx_data),
-  .tx       (uart_txd),
-  .tx_busy  (uart_tx_busy)
- ) ;
-
- assign uarttx = uart_txd;     // top-level output
- 
- localparam [31:0] EXPECTED_MUL_RESULT = 32'h0000_00ba; // decimal 186
- localparam [31:0] EXPECTED_DIV_RESULT = 32'h0000_0005; // decimal 5
- localparam [31:0] EXPECTED_REM_RESULT = 32'h0000_0001; // decimal 1
-
- // FSM state
- reg        m_extension_detected;
- reg        sent;
- reg [4:0]  msg_index;
- reg [7:0]  uart_tx_data;
- reg        uart_tx_en;
-
- // Message to send
- reg [7:0] message [0:21];
- initial begin
-  message[ 0] = "M"; message[ 1] = "-"; message[ 2] = "e"; message[ 3] = "x";
-  message[ 4] = "t"; message[ 5] = "e"; message[ 6] = "n"; message[ 7] = "s";
-  message[ 8] = "i"; message[ 9] = "o"; message[10] = "n"; message[11] = " ";
-  message[12] = "s"; message[13] = "u"; message[14] = "p"; message[15] = "p";
-  message[16] = "o"; message[17] = "r"; message[18] = "t"; message[19] = "e";
-  message[20] = "d"; message[21] = "\n";
- end
-
- always @(posedge clk) begin
-  if (rst) begin
-    m_extension_detected <= 0;
-    sent                 <= 0;
-    msg_index            <= 0;
-    uart_tx_en           <= 0;
-  end else begin
-    // 1) When to detect: wait a few cycles for x10_debug to settle
-    if (!m_extension_detected && init_cnt == 3 &&
-        x3_debug == EXPECTED_MUL_RESULT && x4_debug == EXPECTED_DIV_RESULT && x7_debug == EXPECTED_REM_RESULT) begin
-      m_extension_detected <= 1;
-    end
-
-    // 2) Once detected, send the message byte-by-byte
-    if (m_extension_detected && !sent) begin
-      if (!uart_tx_busy) begin
-        uart_tx_data <= message[msg_index];
-        uart_tx_en   <= 1;
-        msg_index    <= msg_index + 1;
-        if (msg_index == 22) begin
-          sent <= 1;
-        end
-      end else begin
-        // hold off enabling until UART is ready
-        uart_tx_en <= 0;
-      end
-    end else begin
-      uart_tx_en <= 0;
-    end
-  end
- end
 
 endmodule
+
 
