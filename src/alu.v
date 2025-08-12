@@ -31,12 +31,11 @@ module ALU(
         default: Result = 32'b0;          // Invalid operation
     endcase
     
-    zero = (Result == 32'b0);     // Set zero output if result is zero
-
-    $display("ALUControl=%b, A=%d, B=%d, Result=%d", ALUControl, A, B, Result);  
+    zero = (Result == 32'b0);     // Set zero output if result is zero 
 
  end
 
  
 
 endmodule
+
