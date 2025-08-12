@@ -62,9 +62,3 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 
 ---
 
-
-**Usage in simulation:**
-- During simulation, the CPU loads instructions from `imem.mem` at startup.
-- Modify `imem.mem` to change the program executed by the CPU. Go to this [converter](https://luplab.gitlab.io/rvcodecjs/) to convert the assembly code to hex format. 
-
-For more details, refer to the [RISC-V ISA specification](https://riscv.org/technical/specifications/).
