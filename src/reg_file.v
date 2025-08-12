@@ -44,20 +44,11 @@ module regfile (
     for (i = 0; i < 32; i = i + 1) begin
         regs[i] = 32'b0; // Initialize all registers to zero
     end
-    regs[0] = 32'd0;
-    regs[3] = 32'd99;
-    regs[4] = 32'd5;
+    regs[5] = 32'd31;
+    regs[6] = 32'd6;
 
 
 end
-
-
-
-    initial begin
-     #100; // Wait long enough for CPU to execute and write to regs
-
-     $display("x2 = %d, x3 = %d, x4 = %d, x7 = %d, x10 = %d",regs[2], regs[3], regs[4], regs[7], regs[10]);
-    end
 
 
 endmodule
