@@ -10,6 +10,7 @@
   - [Building & Simulating](#building--simulating)
 - [Supported Instructions](#supported-instructions)
 - [Load instructions](#load-instructions)
+- [FPGA Implementation](#fpga-implementation)
 - [License](#license)
 - [Author](#author)
 
@@ -84,6 +85,10 @@ See [`instruction_types.md`](docs/instruction_types.md) for a full list.
 ## Load instructions
 
 See [`instruction_load.md`](docs/instruction_load.md) for the instruction to load the 32-bit binary data into the core. 
+
+## FPGA Implementation
+
+See [`implementation.md`](fpga/implementation.md)
 
 
 
