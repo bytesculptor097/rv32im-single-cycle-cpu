@@ -30,7 +30,7 @@ module regfile (
 
     initial begin
         #100
-        $display("x2 = %d, x3 = %d, x5 = %d, x10 = %d", regs[2], regs[3], regs[5], regs[10]);
+        $display("x3 = %d, x4 = %d, x7 = %d", regs[3], regs[4], regs[7]);
     end
     
     // Debug outputs
@@ -51,4 +51,5 @@ module regfile (
     end
 
 endmodule
+
 
