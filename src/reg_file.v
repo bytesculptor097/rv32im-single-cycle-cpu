@@ -17,7 +17,6 @@ module regfile (
 
     reg [31:0] regs [0:31];
 
-
     // Read logic
     assign rs1_val = regs[rs1];
     assign rs2_val = regs[rs2];
@@ -26,8 +25,10 @@ module regfile (
     always @(posedge clk) begin
         if (reg_write && rd != 5'd0) begin
             regs[rd] <= wd;
-            
         end
+
+        // $display for selected registers (x2, x3, x5, x10)
+        $display("x2 = %d, x3 = %d, x5 = %d, x10 = %d", regs[2], regs[3], regs[5], regs[10]);
     end
 
     // Debug outputs
@@ -39,16 +40,12 @@ module regfile (
     assign x4_debug = regs[4];
 
     integer i;
-  initial begin
-
-    for (i = 0; i < 32; i = i + 1) begin
-        regs[i] = 32'b0; // Initialize all registers to zero
+    initial begin
+        for (i = 0; i < 32; i = i + 1) begin
+            regs[i] = 32'b0; // Initialize all registers to zero
+        end
+        regs[5] = 32'd31;
+        regs[6] = 32'd6;
     end
-    regs[5] = 32'd31;
-    regs[6] = 32'd6;
-
-
-end
-
 
 endmodule
