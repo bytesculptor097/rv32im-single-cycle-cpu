@@ -54,7 +54,7 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 
 ### Prerequisites
 
-- **Hardware Description Language (HDL) Toolchain:** Verilog/SystemVerilog simulator such as [Icarus Verilog](http://iverilog.icarus.com/), [ModelSim](https://www.intel.com/content/www/us/en/software/[...]
+- **Hardware Description Language (HDL) Toolchain:** Verilog/SystemVerilog simulator such as [Icarus Verilog](http://iverilog.icarus.com/).
 - **RISC-V Documentation:** Familiarity with the [RISC-V ISA](https://riscv.org/technical/specifications/).
 
 ### Building & Simulating
