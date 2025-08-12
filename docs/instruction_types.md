@@ -62,28 +62,6 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 
 ---
 
-## Instruction Memory Initialization (`imem.mem`)
-
-To run your RISC-V program on this CPU, you must initialize the instruction memory by providing a hex file named `imem.mem`.  
-This file should contain the machine code (hexadecimal format) for your program, with each line representing a 32-bit instruction.
-
-**How to initialize:**
-
-1. **Create your RISC-V program** in assembly or C, and compile it using a RISC-V toolchain to obtain the binary/hex instructions.
-2. **Convert the binary to hexadecimal** in the format expected by the simulator (one instruction per line, little-endian order if required).
-3. **Place your hex instructions in `imem.mem`** within your project directory (`/src`)
-
-**Example `imem.mem` file:**
-```
-00000293  # addi x5, x0, 0
-00430313  # addi x6, x6, 4
-00532023  # sw x5, 0(x6)
-00008067  # ret
-```
-
-**Note:**  
-- Comments can be added after the instruction for clarity, but the simulator may ignore them.
-- The initialization file should match the address mapping and memory size of your implementation.
 
 **Usage in simulation:**
 - During simulation, the CPU loads instructions from `imem.mem` at startup.
