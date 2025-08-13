@@ -29,6 +29,7 @@ module core (
     wire [31:0] write_data = is_csr ? csr_read_data : (memtoreg ? mem_data : alu_result);
     wire [31:0] x3_debug;
     wire [31:0] x5_debug;
+    wire [31:0] x2_debug;
     wire zero;
     wire [31:0] branch_target;
     wire csr_read_en, csr_write_en, is_csr;
@@ -184,6 +185,7 @@ module core (
  
 
 endmodule
+
 
 
 
