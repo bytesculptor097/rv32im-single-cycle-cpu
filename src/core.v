@@ -6,6 +6,7 @@ module core (
 
 
     // Internal wires
+    wire [31:0] din;
     wire branch;
     wire [31:0] curr_addr;
     reg [31:0] next_addr;
@@ -183,6 +184,7 @@ module core (
  
 
 endmodule
+
 
 
 
