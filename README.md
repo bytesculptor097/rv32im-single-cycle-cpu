@@ -56,7 +56,7 @@ This repository contains the design and implementation of a single-cycle RV32IM 
 ### Prerequisites
 
 - **Hardware Description Language (HDL) Toolchain:** Verilog/SystemVerilog simulator such as [Icarus Verilog](http://iverilog.icarus.com/).
-- **RISC-V GNU Toolchain:** [RISC-V GNU Toolchain](https://github.com/bytesculptor097/rv32im-single-cycle-cpu/blob/main/docs/instruction_load.md) is needed for converting Assembly to 32-bit binary
+- **RISC-V GNU Toolchain:** [RISC-V GNU Toolchain](https://github.com/bytesculptor097/rv32im-single-cycle-cpu/blob/main/docs/instruction_load.md/installing-the-risc-v-gnu-toolchain) is needed for converting Assembly to 32-bit binary
 - **RISC-V Documentation:** Familiarity with the [RISC-V ISA](https://riscv.org/technical/specifications/).
 
 ### Building & Simulating
