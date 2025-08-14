@@ -1,7 +1,7 @@
 # Supported Instructions for RV32IM Single-Cycle CPU
 
 This CPU core implements the full RV32I base instruction set and the RV32M extension for integer multiplication and division as defined by the RISC-V specification.  
-Additional comparison, control transfer, memory, system, and pseudo-instructions are also listed for completeness.
+Additional comparison, control transfer, memory, system, CSR (Control and Status Register), and pseudo-instructions are also listed for completeness.
 
 ---
 
@@ -47,8 +47,6 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `LW`     – Load Word
 - `SW`     – Store Word
 
-
-
 ---
 
 ## RV32M Extension (Multiplication/Division)
@@ -59,6 +57,15 @@ Additional comparison, control transfer, memory, system, and pseudo-instructions
 - `REM`    – Remainder (signed)
 - `REMU`   – Remainder (unsigned)
 
-
 ---
 
+## CSR (Control and Status Register) Instructions
+
+- `CSRRW`  – Atomic Read/Write CSR
+- `CSRRS`  – Atomic Read and Set Bits in CSR
+- `CSRRC`  – Atomic Read and Clear Bits in CSR
+- `CSRRWI` – Atomic Read/Write CSR (Immediate)
+- `CSRRSI` – Atomic Read and Set Bits in CSR (Immediate)
+- `CSRRCI` – Atomic Read and Clear Bits in CSR (Immediate)
+
+---
