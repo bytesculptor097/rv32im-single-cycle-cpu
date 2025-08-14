@@ -2,12 +2,12 @@
     .globl _start
 
 _start:
-    li x5, 1          # x5 = counter (starts at 1)
-    li x4, 0          # x4 = sum (starts at 0)
+    li x1, 13         # x1 = 13
+    li x2, 5           # x2 = 5  
 
-loop:
-    add x4, x4, x5    # x4 += x5
-    addi x5, x5, 1    # x5 += 1
-    li x6, 10         # x6 = 10 (loop limit)
-    blt x5, x6, loop  # if x5 < 10, repeat loop
+    mul  x3, x1, x2    
+    div  x4, x1, x2    
+    divu x5, x1, x2    
+    rem  x6, x1, x2    
+    remu x7, x1, x2    
 
