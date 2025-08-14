@@ -73,8 +73,6 @@ module csr (
             end
         end
 
-        $display("CSR: MISA=%h, MSTATUS=%h, MTVEC=%h, MEPC=%h, MCAUSE=%h, MCYCLE=%h, MINSTRET=%h, read_data=%h",
-            misa, mstatus, mtvec, mepc, mcause, mcycle, minstret, csr_read_data);
     end
 
     // CSR read logic
@@ -92,5 +90,6 @@ module csr (
     // Outputs for trap handler
     assign mtvec_out = mtvec;
     assign mepc_out  = mepc;
+
 
 endmodule
