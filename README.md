@@ -68,10 +68,10 @@ This repository contains the design and implementation of a single-cycle RV32IM 
    ```
 
 2. **Run Simulation**
-   - Using Icarus Verilog:
+   - Using the Makefile, run:
      ```sh
-     iverilog -o cpu.vvp src/*.v
-     vvp cpu.vvp
+     make all
+     vvp rv32im.vvp
      ```
    - Review the waveform using [GTKWave](http://gtkwave.sourceforge.net/) if desired.
 
