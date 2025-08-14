@@ -1,6 +1,8 @@
 module control_unit(
+    input clk,
     input [6:0] opcode,
     input [2:0] funct3,
+    input [31:0] ram_out,
     output reg RegWrite,
     output reg ALUSrc,
     output reg MemRead,
@@ -13,10 +15,18 @@ module control_unit(
     output reg csr_read_en,    
     output reg csr_write_en,   
     output reg is_csr,
-    output reg [2:0] branch_type  
+    output reg [2:0] branch_type,
+    output reg trap_enter,
+    output reg trap_exit,
+    output reg [31:0] exception_code  
 );
 
- always @(*) begin
+    wire illegal_instr = (opcode == 7'b0000000); // Example: undefined opcode
+    wire is_mret = (ram_out == 32'h34216073);
+
+
+
+ always @(posedge clk) begin
     // Default values
     RegWrite = 0;
     ALUSrc   = 0;
@@ -31,6 +41,9 @@ module control_unit(
     csr_write_en = 0;
     is_csr = 0;
     branch_type = 3'b000; // Default to BEQ
+    trap_enter = illegal_instr;
+    trap_exit = is_mret;
+    exception_code = illegal_instr ? 32'd2 : 32'd0; // 2 = illegal instruction
 
     case (opcode)
         7'b0110011: begin // R-type
@@ -118,6 +131,11 @@ module control_unit(
             // No action
         end
     endcase
+    $display("Control Unit: RegWrite=%b, ALUSrc=%b, MemRead=%b, MemWrite=%b, Branch=%b, Jump=%b, Jump_r=%b, memtoreg=%b, ALUOp=%b, csr_read_en=%b, csr_write_en=%b, is_csr=%b, branch_type=%b, trap_enter=%b, trap_exit=%b, exception_code=%d",
+        RegWrite, ALUSrc, MemRead, MemWrite, Branch, Jump, Jump_r, memtoreg, ALUOp, csr_read_en, csr_write_en, is_csr, branch_type, trap_enter, trap_exit, exception_code);
+    
  end
+
+
 
 endmodule
