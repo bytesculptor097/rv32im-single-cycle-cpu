@@ -197,7 +197,8 @@ module core (
         next_addr = curr_addr + 4;
  end
 
-    assign result = x3_debug[7:0]; // Output the lower 8 bits of x5 for result
+    assign result = x3_debug[7:0]; // Output the lower 8 bits of x5 for result, change this as per your preference
 
 
 endmodule
+
