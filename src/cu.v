@@ -131,10 +131,9 @@ module control_unit(
             // No action
         end
     endcase
-    $display("Control Unit: RegWrite=%b, ALUSrc=%b, MemRead=%b, MemWrite=%b, Branch=%b, Jump=%b, Jump_r=%b, memtoreg=%b, ALUOp=%b, csr_read_en=%b, csr_write_en=%b, is_csr=%b, branch_type=%b, trap_enter=%b, trap_exit=%b, exception_code=%d",
-        RegWrite, ALUSrc, MemRead, MemWrite, Branch, Jump, Jump_r, memtoreg, ALUOp, csr_read_en, csr_write_en, is_csr, branch_type, trap_enter, trap_exit, exception_code);
-    
+
  end
+
 
 
 
