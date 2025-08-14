@@ -11,7 +11,3 @@ loop:
     li x6, 10         # x6 = 10 (loop limit)
     blt x5, x6, loop  # if x5 < 10, repeat loop
 
-    # Exit (for simulation)
-    li a0, 0          # exit code
-    li a7, 93         # syscall for exit
-    ecall
