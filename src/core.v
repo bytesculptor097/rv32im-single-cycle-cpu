@@ -41,6 +41,7 @@ module core (
     wire [31:0] mtvec, mepc;
     wire trap_enter, trap_exit;
     wire [31:0] exception_code;
+    wire [31:0] x2_debug;
 
 
 
@@ -201,4 +202,5 @@ module core (
 
 
 endmodule
+
 
